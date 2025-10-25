@@ -1,0 +1,74 @@
+# ===========================================
+# GITHUB PAGES DEPLOYMENT WORKFLOW
+# ===========================================
+# Este workflow despliega automáticamente archivos estáticos
+# (HTML, CSS, JS) a GitHub Pages cuando se hace push a main
+
+# Nombre del workflow que aparecerá en la pestaña Actions
+name: Deploy to GitHub Pages
+
+# ===========================================
+# TRIGGERS - CUÁNDO SE EJECUTA EL WORKFLOW
+# ===========================================
+on:
+  # Se ejecuta automáticamente cuando se hace push a la rama main
+  push:
+    branches: [main]
+  # Permite ejecutar el workflow manualmente desde la interfaz de GitHub
+  workflow_dispatch:
+
+# ===========================================
+# PERMISOS - QUÉ PUEDE HACER EL WORKFLOW
+# ===========================================
+permissions:
+  contents: read    # Puede leer el contenido del repositorio
+  pages: write      # Puede escribir/desplegar a GitHub Pages
+  id-token: write   # Puede generar tokens de autenticación
+
+# ===========================================
+# CONCURRENCIA - EVITA EJECUCIONES MÚLTIPLES
+# ===========================================
+concurrency:
+  group: "pages"                    # Agrupa todas las ejecuciones de Pages
+  cancel-in-progress: true         # Cancela ejecuciones anteriores si hay una nueva
+
+# ===========================================
+# JOBS - TAREAS QUE SE EJECUTAN
+# ===========================================
+jobs:
+  # Nombre del job (tarea)
+  deploy:
+    # Ejecuta en el último Ubuntu disponible
+    runs-on: ubuntu-latest
+    
+    # ===========================================
+    # ENTORNO - CONFIGURACIÓN DE GITHUB PAGES
+    # ===========================================
+    environment:
+      name: github-pages           # Nombre del entorno (debe existir en Settings)
+      url: ${{ steps.deployment.outputs.page_url }}  # URL donde se desplegará el sitio
+    
+    # ===========================================
+    # PASOS - ACCIONES QUE SE EJECUTAN EN ORDEN
+    # ===========================================
+    steps:
+      # PASO 1: Descargar el código del repositorio
+      - name: Checkout
+        uses: actions/checkout@v4  # Acción oficial de GitHub para descargar código
+      
+      # PASO 2: Configurar GitHub Pages para archivos estáticos
+      - name: Setup Pages
+        uses: actions/configure-pages@v4  # Acción oficial para configurar Pages
+        with:
+          static_site_generator: "none"   # Indica que no hay generador (solo archivos estáticos)
+      
+      # PASO 3: Preparar los archivos para el despliegue
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3  # Sube los archivos como artefacto
+        with:
+          path: '.'  # Sube todo el contenido del directorio raíz (incluyendo index.html)
+      
+      # PASO 4: Desplegar a GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment                    # ID para referenciar la salida de este paso
+        uses: actions/deploy-pages@v4     # Acción oficial para desplegar a Pages
