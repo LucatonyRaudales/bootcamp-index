@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Presentación — José Mendoza</title>
+	<meta name="description" content="Página de presentación personal de José Mendoza" />
+	<style>
+		:root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#9aa4b2;--glass:rgba(255,255,255,0.03)}
+		html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial}
+		body{background:linear-gradient(180deg,#021024 0%, #071428 60%);color:#e6eef6;display:flex;align-items:center;justify-content:center;padding:32px}
+		.card{max-width:900px;width:100%;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 10px 30px rgba(2,6,23,0.6);border-radius:16px;overflow:hidden;display:grid;grid-template-columns:320px 1fr}
+		@media (max-width:760px){.card{grid-template-columns:1fr;}.left{padding:28px 20px;text-align:center}}
+		.left{background:linear-gradient(180deg,rgba(6,182,212,0.06),transparent);padding:40px 36px;display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+		.avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:36px;color:#021024;border:4px solid rgba(255,255,255,0.06)}
+		h1{font-size:28px;margin:0 0 4px}
+		p.lead{margin:0;color:var(--muted)}
+		.meta{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--muted)}
+		.badge{display:inline-block;background:var(--glass);color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
+		.right{padding:36px 44px}
+		.section{margin-bottom:18px}
+		.skills{display:flex;flex-wrap:wrap;gap:8px}
+		.skill{background:rgba(255,255,255,0.03);Padding:8px 10px;border-radius:10px;font-size:13px;color:var(--muted)}
+		.contact{display:flex;gap:12px;align-items:center}
+		a.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:var(--accent);color:#021224;border-radius:10px;text-decoration:none;font-weight:700}
+		.links a{color:var(--accent);text-decoration:none}
+		footer{margin-top:18px;color:var(--muted);font-size:13px}
+	</style>
+</head>
+<body>
+	<article class="card" role="main">
+		<aside class="left">
+			<div class="avatar">JM</div>
+			<div>
+				<h1>José Mendoza</h1>
+				<p class="lead">Desarrollador web · Aprendiz constante · Entusiasta de la Transformación Digital</p>
+			</div>
+
+			<div class="meta">
+				<div><span class="badge">Full‑Stack Developer</span></div>
+				<div>Ubicación: El Paraíso, El Paraíso</div>
+				<div class="links">Portfolio: <a href="index.html">index.html</a> · GitHub: <a href="https://github.com/joseMendoza0704" target="_blank" rel="noopener">joseMendoza0704</a></div>
+			</div>
+
+			<div style="margin-top:auto;width:100%;">
+				<a class="btn" href="mailto:JoseMendozam058@gmail.com">Contactar por email</a>
+			</div>
+		</aside>
+
+		<div class="right">
+			<section class="section">
+				<h2>Sobre mí</h2>
+				<p>Hola, soy José. Me especializo en crear interfaces web accesibles y responsivas. Tengo experiencia en HTML, CSS y JavaScript, y me interesa el desarrollo de aplicaciones interactivas y el diseño centrado en el usuario.</p>
+			</section>
+
+			<section class="section">
+				<h3>Habilidades</h3>
+				<div class="skills">
+					<span class="skill">HTML</span>
+					<span class="skill">CSS / SASS</span>
+					<span class="skill">JavaScript</span>
+					<span class="skill">React</span>
+					<span class="skill">Node.js</span>
+					<span class="skill">Git</span>
+				</div>
+			</section>
+
+			<section class="section">
+				<h3>Proyectos destacados</h3>
+				<ul>
+					<li><a href="#">Proyecto A</a> — Una breve descripción del proyecto A.</li>
+					<li><a href="#">Proyecto B</a> — Una breve descripción del proyecto B.</li>
+				</ul>
+			</section>
+
+			<section class="section">
+				<h3>Contacto</h3>
+				<p class="contact">Email: <a href="mailto:JoseMendozam058@gmail.com">JoseMendozam058@gmail.com</a> · Tel: <span class="muted">+504 8953-4082</span></p>
+				<footer>Si quieres, envíame tu CV o indica qué proyecto quieres revisar y puedo preparar una versión personalizada de esta página.</footer>
+			</section>
+		</div>
+	</article>
+</body>
+</html>
