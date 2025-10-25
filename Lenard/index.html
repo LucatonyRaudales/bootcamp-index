@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Bonito</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reseteo básico para quitar márgenes por defecto */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Usamos la fuente 'Poppins' que importamos. Si no carga, usa sans-serif */
+            font-family: 'Poppins', sans-serif;
+            
+            /* Un fondo con un degradado sutil */
+            background: linear-gradient(135deg, #ece9e6 0%, #ffffff 100%);
+            
+            /* Centramos todo el contenido vertical y horizontalmente */
+            display: grid;
+            place-items: center;
+            min-height: 100vh; /* Alto total de la pantalla */
+            
+            color: #333; /* Color de texto principal */
+            line-height: 1.7;
+        }
+
+        /* El contenedor principal con estilo de "tarjeta" */
+        .card {
+            background-color: #ffffff;
+            border-radius: 15px; /* Bordes redondeados */
+            
+            /* Sombra suave para dar profundidad */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            
+            padding: 2.5rem; /* Espaciado interno */
+            max-width: 500px;
+            width: 90%; /* Responsive para móviles */
+            text-align: center;
+            
+            /* Animación sutil de entrada */
+            transform: translateY(-10px);
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Animación para que la tarjeta aparezca */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-weight: 600; /* Título más "grueso" */
+            font-size: 2.2rem;
+            
+            /* Color de acento para el título */
+            color: #2c3e50; 
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-weight: 300; /* Texto de párrafo más ligero */
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Estilo para el botón o enlace principal */
+        .cta-button {
+            display: inline-block; /* Para que respete el padding */
+            text-decoration: none; /* Quita el subrayado de enlace */
+            color: #ffffff;
+            background-color: #007bff; /* Azul vibrante */
+            
+            padding: 12px 25px;
+            border-radius: 50px; /* Botón tipo "píldora" */
+            font-weight: 400;
+            
+            /* Transición suave para el efecto hover */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Efecto al pasar el mouse por encima del botón */
+        .cta-button:hover {
+            background-color: #0056b3; /* Azul más oscuro */
+            transform: scale(1.05); /* Ligeramente más grande */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>¡Proyecto Iniciado! 🚀</h1>
+        <p>
+            Este es un <code>index.html</code> con CSS integrado para lucir genial
+            en cualquier repositorio de GitHub.
+        </p>
+        
+        <a href="#" class="cta-button">
+            Comenzar
+        </a>
+    </div>
+
+</body>
+</html>
