@@ -1,3 +1,3 @@
 # Hola Mundo
 
-¡Hola Mundo desde Group 5!
+¡Hola Mundo!
